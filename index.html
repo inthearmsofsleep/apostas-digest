@@ -4,134 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>Múltiplas +EV · login</title>
-  <style>
-    :root { color-scheme: light; }
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f1f5f9; color:#0f172a;
-      font-family: Georgia, "Times New Roman", serif; }
-    form { width:min(100%, 360px); margin:24px; padding:28px 24px; background:#fff; border:1px solid #dbe3ee;
-      border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.06); }
-    h1 { margin:0 0 6px; font-size:1.45rem; }
-    p { margin:0 0 18px; color:#64748b; font-size:.95rem; line-height:1.45; }
-    label { display:block; font-size:.85rem; color:#475569; margin:0 0 6px; }
-    input { width:100%; box-sizing:border-box; margin:0 0 14px; padding:10px 12px; border:1px solid #cbd5e1;
-      border-radius:10px; font:inherit; font-size:1rem; }
-    button { width:100%; border:0; border-radius:10px; padding:11px 14px; background:#059669; color:#fff;
-      font:inherit; font-weight:600; cursor:pointer; }
-    button:disabled { opacity:.65; cursor:wait; }
-    .err { color:#b91c1c; font-size:.9rem; min-height:1.2em; margin:0 0 10px; }
-    .hint { margin-top:14px; font-size:.78rem; color:#94a3b8; }
-  </style>
+  <title>Múltiplas +EV · 20/10, 11:21</title>
 </head>
-<body>
-  <form id="login" autocomplete="current-password">
-    <h1>Múltiplas +EV</h1>
-    <p>Área reservada. Entra com o utilizador e a password que te foram dados.</p>
-    <div class="err" id="err" aria-live="polite"></div>
-    <label for="user">Utilizador</label>
-    <input id="user" name="username" autocomplete="username" required />
-    <label for="pass">Password</label>
-    <input id="pass" name="password" type="password" autocomplete="current-password" required />
-    <button type="submit" id="go">Entrar</button>
-    <p class="hint">Contas: fcp. A sessão fica neste browser até fechares o separador.</p>
-  </form>
-  <script>
-(function () {
-  var SEALED = JSON.parse('{"v":1,"iterations":120000,"contentIv":"Mpv2Ia4/KCpV44x+","contentTag":"7CNJBh0iwzrdl7K2X0a2yA==","ciphertext":"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","users":[{"user":"fcp","salt":"tt/DJ4mj6A75IlIJ4IARyA==","iv":"WpKZprIworbY8u1L","tag":"Fh5lHNpVF3TdWcUoVFHHkw==","wrappedKey":"r9bY2urfIYmbXaQkDoWCTkCO0mD4sR9zT8Gvcsgpz1g="}]}');
-  var SESSION_KEY = 'mev-digest-auth-v1';
-
-  function b64ToBytes(b64) {
-    var bin = atob(b64);
-    var out = new Uint8Array(bin.length);
-    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
-    return out;
-  }
-
-  function bytesToUtf8(bytes) {
-    return new TextDecoder().decode(bytes);
-  }
-
-  async function deriveKey(password, salt, iterations) {
-    var base = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
-    return crypto.subtle.deriveKey(
-      { name: 'PBKDF2', salt: salt, iterations: iterations, hash: 'SHA-256' },
-      base,
-      { name: 'AES-GCM', length: 256 },
-      false,
-      ['decrypt']
-    );
-  }
-
-  async function decryptAesGcm(key, iv, tag, ciphertext) {
-    var data = new Uint8Array(ciphertext.length + tag.length);
-    data.set(ciphertext, 0);
-    data.set(tag, ciphertext.length);
-    var plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, data);
-    return new Uint8Array(plain);
-  }
-
-  async function unlock(user, password) {
-    var slot = null;
-    for (var i = 0; i < SEALED.users.length; i++) {
-      if (SEALED.users[i].user === user) { slot = SEALED.users[i]; break; }
-    }
-    if (!slot) throw new Error('Utilizador ou password incorrectos.');
-    var wrapKey = await deriveKey(user + ':' + password, b64ToBytes(slot.salt), SEALED.iterations);
-    var contentKeyBytes = await decryptAesGcm(
-      wrapKey,
-      b64ToBytes(slot.iv),
-      b64ToBytes(slot.tag),
-      b64ToBytes(slot.wrappedKey)
-    );
-    var contentKey = await crypto.subtle.importKey('raw', contentKeyBytes, 'AES-GCM', false, ['decrypt']);
-    var htmlBytes = await decryptAesGcm(
-      contentKey,
-      b64ToBytes(SEALED.contentIv),
-      b64ToBytes(SEALED.contentTag),
-      b64ToBytes(SEALED.ciphertext)
-    );
-    return bytesToUtf8(htmlBytes);
-  }
-
-  function showHtml(html) {
-    document.open();
-    document.write(html);
-    document.close();
-  }
-
-  async function trySession() {
-    try {
-      var saved = sessionStorage.getItem(SESSION_KEY);
-      if (!saved) return;
-      var parsed = JSON.parse(saved);
-      if (!parsed || !parsed.u || !parsed.p) return;
-      var html = await unlock(parsed.u, parsed.p);
-      showHtml(html);
-    } catch (e) {
-      sessionStorage.removeItem(SESSION_KEY);
-    }
-  }
-
-  document.getElementById('login').addEventListener('submit', async function (ev) {
-    ev.preventDefault();
-    var err = document.getElementById('err');
-    var btn = document.getElementById('go');
-    var user = document.getElementById('user').value.trim();
-    var pass = document.getElementById('pass').value;
-    err.textContent = '';
-    btn.disabled = true;
-    try {
-      var html = await unlock(user, pass);
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify({ u: user, p: pass }));
-      showHtml(html);
-    } catch (e) {
-      err.textContent = 'Utilizador ou password incorrectos.';
-      btn.disabled = false;
-    }
-  });
-
-  trySession();
-})();
-  </script>
+<body style="margin:0;padding:0;background:#f8fafc;color:#111827;font-family:Georgia,'Times New Roman',serif;">
+  <div style="max-width:720px;margin:0 auto;padding:24px 16px 48px;">
+    <p style="margin:0 0 8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#059669;">
+      Digest diário · modo fiável · LE BULL.pt
+    </p>
+    <h1 style="margin:0 0 8px;font-size:28px;line-height:1.2;">Múltiplas +EV · 20/10, 11:21</h1>
+    <p style="margin:0 0 20px;color:#4b5563;font-size:15px;line-height:1.5;">
+      Janela 20/10 – 26/10 2026 · dias 2026-10-20 · banca 500,00 € ·
+      821 jogos · 780 com odd · 131 apostas nos dias ·
+      0 bilhetes.
+      LE BULL.pt · ref. Betano.pt (157) · Solverde.pt (32) · bwin.pt (2) · Betclic.pt (27) · calendário multi-desporto
+    </p>
+    <p style="padding:16px;border:1px solid #fde68a;background:#fffbeb;border-radius:12px;color:#92400e;">
+  Nenhuma aposta passou o modo fiável para 2026-10-20. Abre a app e tenta o alargado, ou volta amanhã.
+</p>
+    <p style="margin:28px 0 0;font-size:12px;color:#6b7280;line-height:1.5;">
+      Fecha tu a aposta na LE BULL.pt. Preços de referência (Betano → Solverde → bwin; Betclic só em último).
+      Isto não é conselho de apostas e não garante lucro.
+    </p>
+  </div>
 </body>
 </html>
