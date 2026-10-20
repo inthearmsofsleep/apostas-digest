@@ -4,27 +4,134 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>Múltiplas +EV · 20/10, 11:21</title>
+  <title>Múltiplas +EV · login</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f1f5f9; color:#0f172a;
+      font-family: Georgia, "Times New Roman", serif; }
+    form { width:min(100%, 360px); margin:24px; padding:28px 24px; background:#fff; border:1px solid #dbe3ee;
+      border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,.06); }
+    h1 { margin:0 0 6px; font-size:1.45rem; }
+    p { margin:0 0 18px; color:#64748b; font-size:.95rem; line-height:1.45; }
+    label { display:block; font-size:.85rem; color:#475569; margin:0 0 6px; }
+    input { width:100%; box-sizing:border-box; margin:0 0 14px; padding:10px 12px; border:1px solid #cbd5e1;
+      border-radius:10px; font:inherit; font-size:1rem; }
+    button { width:100%; border:0; border-radius:10px; padding:11px 14px; background:#059669; color:#fff;
+      font:inherit; font-weight:600; cursor:pointer; }
+    button:disabled { opacity:.65; cursor:wait; }
+    .err { color:#b91c1c; font-size:.9rem; min-height:1.2em; margin:0 0 10px; }
+    .hint { margin-top:14px; font-size:.78rem; color:#94a3b8; }
+  </style>
 </head>
-<body style="margin:0;padding:0;background:#f8fafc;color:#111827;font-family:Georgia,'Times New Roman',serif;">
-  <div style="max-width:720px;margin:0 auto;padding:24px 16px 48px;">
-    <p style="margin:0 0 8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#059669;">
-      Digest diário · modo fiável · LE BULL.pt
-    </p>
-    <h1 style="margin:0 0 8px;font-size:28px;line-height:1.2;">Múltiplas +EV · 20/10, 11:21</h1>
-    <p style="margin:0 0 20px;color:#4b5563;font-size:15px;line-height:1.5;">
-      Janela 20/10 – 26/10 2026 · dias 2026-10-20 · banca 500,00 € ·
-      821 jogos · 780 com odd · 131 apostas nos dias ·
-      0 bilhetes.
-      LE BULL.pt · ref. Betano.pt (157) · Solverde.pt (32) · bwin.pt (2) · Betclic.pt (27) · calendário multi-desporto
-    </p>
-    <p style="padding:16px;border:1px solid #fde68a;background:#fffbeb;border-radius:12px;color:#92400e;">
-  Nenhuma aposta passou o modo fiável para 2026-10-20. Abre a app e tenta o alargado, ou volta amanhã.
-</p>
-    <p style="margin:28px 0 0;font-size:12px;color:#6b7280;line-height:1.5;">
-      Fecha tu a aposta na LE BULL.pt. Preços de referência (Betano → Solverde → bwin; Betclic só em último).
-      Isto não é conselho de apostas e não garante lucro.
-    </p>
-  </div>
+<body>
+  <form id="login" autocomplete="current-password">
+    <h1>Múltiplas +EV</h1>
+    <p>Área reservada. Entra com o utilizador e a password que te foram dados.</p>
+    <div class="err" id="err" aria-live="polite"></div>
+    <label for="user">Utilizador</label>
+    <input id="user" name="username" autocomplete="username" required />
+    <label for="pass">Password</label>
+    <input id="pass" name="password" type="password" autocomplete="current-password" required />
+    <button type="submit" id="go">Entrar</button>
+    <p class="hint">Contas: fcp. A sessão fica neste browser até fechares o separador.</p>
+  </form>
+  <script>
+(function () {
+  var SEALED = JSON.parse('{"v":1,"iterations":120000,"contentIv":"Ul1q+8p2ZPAY/77s","contentTag":"+hHWmOyxYhf9CC2NMy4s+w==","ciphertext":"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","users":[{"user":"fcp","salt":"+awC51h67fhqZEZaMOK6Jw==","iv":"7xyBQuB7FOfwm1Ej","tag":"HuTkGty3mdKlcvIuxUUCzg==","wrappedKey":"MbD0nmQC8oivyF53e7RZyP901FmhhCCBZNn/05v95nI="}]}');
+  var SESSION_KEY = 'mev-digest-auth-v1';
+
+  function b64ToBytes(b64) {
+    var bin = atob(b64);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  function bytesToUtf8(bytes) {
+    return new TextDecoder().decode(bytes);
+  }
+
+  async function deriveKey(password, salt, iterations) {
+    var base = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt: salt, iterations: iterations, hash: 'SHA-256' },
+      base,
+      { name: 'AES-GCM', length: 256 },
+      false,
+      ['decrypt']
+    );
+  }
+
+  async function decryptAesGcm(key, iv, tag, ciphertext) {
+    var data = new Uint8Array(ciphertext.length + tag.length);
+    data.set(ciphertext, 0);
+    data.set(tag, ciphertext.length);
+    var plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, data);
+    return new Uint8Array(plain);
+  }
+
+  async function unlock(user, password) {
+    var slot = null;
+    for (var i = 0; i < SEALED.users.length; i++) {
+      if (SEALED.users[i].user === user) { slot = SEALED.users[i]; break; }
+    }
+    if (!slot) throw new Error('Utilizador ou password incorrectos.');
+    var wrapKey = await deriveKey(user + ':' + password, b64ToBytes(slot.salt), SEALED.iterations);
+    var contentKeyBytes = await decryptAesGcm(
+      wrapKey,
+      b64ToBytes(slot.iv),
+      b64ToBytes(slot.tag),
+      b64ToBytes(slot.wrappedKey)
+    );
+    var contentKey = await crypto.subtle.importKey('raw', contentKeyBytes, 'AES-GCM', false, ['decrypt']);
+    var htmlBytes = await decryptAesGcm(
+      contentKey,
+      b64ToBytes(SEALED.contentIv),
+      b64ToBytes(SEALED.contentTag),
+      b64ToBytes(SEALED.ciphertext)
+    );
+    return bytesToUtf8(htmlBytes);
+  }
+
+  function showHtml(html) {
+    document.open();
+    document.write(html);
+    document.close();
+  }
+
+  async function trySession() {
+    try {
+      var saved = sessionStorage.getItem(SESSION_KEY);
+      if (!saved) return;
+      var parsed = JSON.parse(saved);
+      if (!parsed || !parsed.u || !parsed.p) return;
+      var html = await unlock(parsed.u, parsed.p);
+      showHtml(html);
+    } catch (e) {
+      sessionStorage.removeItem(SESSION_KEY);
+    }
+  }
+
+  document.getElementById('login').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var err = document.getElementById('err');
+    var btn = document.getElementById('go');
+    var user = document.getElementById('user').value.trim();
+    var pass = document.getElementById('pass').value;
+    err.textContent = '';
+    btn.disabled = true;
+    try {
+      var html = await unlock(user, pass);
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify({ u: user, p: pass }));
+      showHtml(html);
+    } catch (e) {
+      err.textContent = 'Utilizador ou password incorrectos.';
+      btn.disabled = false;
+    }
+  });
+
+  trySession();
+})();
+  </script>
 </body>
 </html>
